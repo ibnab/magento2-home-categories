@@ -1,0 +1,36 @@
+<?php
+$categories = $this->getStoreCategories(true,false,true);
+$categoryHelper = $this->getCategoryHelper();
+?>
+<ul>
+<?php
+foreach($categories as $category):
+     if (!$category->getIsActive()) {
+        continue;
+     }
+
+?>
+<li><a href="<?php echo $categoryHelper->getCategoryUrl($category) ?>"><?php echo $category->getName() ?></a></li>
+<?php  
+if($childrenCategories = $this->getChildCategories($category)):
+?>
+<ul>
+<?php
+foreach($childrenCategories as $childrenCategory):
+     if (!$childrenCategory->getIsActive()) {
+        continue;
+     }
+?>
+<li><a href="<?php echo $categoryHelper->getCategoryUrl($childrenCategory) ?>"><?php echo $childrenCategory->getName() ?></a></li>
+<?php
+endforeach;
+?>
+</ul>
+<?php
+endif;
+endforeach;
+?>
+</ul>
+<h1>OR</h1>
+<?php echo $this->getHtml() ?>
+

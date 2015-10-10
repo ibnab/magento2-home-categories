@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Ibnab\CategoriesSide\Block\CategorisCollection">
+        <arguments>
+            <argument name="deleteorderAction" xsi:type="array">
+                <item name="context" xsi:type="string">\Magento\Framework\View\Element\Template\Context</item>
+                <item name="helper" xsi:type="string">\Magento\Catalog\Helper\Category</item>
+                <item name="flatstate" xsi:type="string">\Magento\Catalog\Model\Indexer\Category\Flat\State</item>
+               <item name="menu" xsi:type="string">\Magento\Theme\Block\Html\Topmenu</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>
